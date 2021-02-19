@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export BASE_REPO_URL="https://github.com/ExtinctAxoltol/alien-update"
+export BASE_REPO_URL="https://github.com/ExtinctAxotlol/alien-update"
 export ALIEN_DIR_NAME="$HOME/.alien-update"
 # Defining Colors
 x='\033'
