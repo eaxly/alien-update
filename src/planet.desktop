@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Planet Update
+Comment=Updates a large amount of applications
+Type=Application
+Terminal=true
+Exec=planet
+TryExec=/usr/bin/planet
