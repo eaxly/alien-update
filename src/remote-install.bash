@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export BASE_REPO_URL="https://github.com/ExtinctAxoltol/alien-update"
-export ALIEN_DIR_NAME="$HOME/.alien-update"
 # Defining Colors
 x='\033'
 RED="${x}[0;96m"
@@ -49,8 +47,8 @@ else
 fi
 
 info "Cloning git repo...\n"
-mkdir -p $ALIEN_DIR_NAME
-git clone $BASE_REPO_URL.git $ALIEN_DIR_NAME
+mkdir -p $HOME/.alien-update
+git clone https://github.com/ExtinctAxoltol/alien-update.git $HOME/.alien-update
 info "Installing..."
 cd "$ALIEN_DIR_NAME"
 ./src/install.bash
