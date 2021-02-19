@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Alien Update
+Comment=Updates a large amount of applications
+Type=Application
+Terminal=true
+Exec=alien
+TryExec=/usr/bin/alien-update
