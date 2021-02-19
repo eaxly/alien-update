@@ -70,10 +70,10 @@ sleep 2.5
 read -p "Do you want to update all pip packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
   info "\nAlien will not update pip packages!\n"
-  echo "export ALIEN_UPDATE_PIP_PACKAGES=false" >> $HOME/.config/alien-config.bash
+  echo "export ALIEN_UPDATE_PIP_PACKAGES=false" > $HOME/.config/alien-config.bash
 else
   info "\nAlien will update pip packages!\n"
-  echo "export ALIEN_UPDATE_PIP_PACKAGES=true" >> $HOME/.config/alien-config.bash
+  echo "export ALIEN_UPDATE_PIP_PACKAGES=true" > $HOME/.config/alien-config.bash
 fi
 sleep 1
 
