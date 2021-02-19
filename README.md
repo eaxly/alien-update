@@ -17,7 +17,7 @@ It:
 \*\*: means the above and if it is configurated so  
 # Installation:
 Paste the following in a terminal:  
-`bash -c "$(curl https://raw.githubusercontent.com/deepspacebird/planet-update/master/src/remote-install.bash)"`
+`bash -c "$(curl https://raw.githubusercontent.com/deepspacebird/planet-update/main/src/remote-install.bash)"`
 
 # Configuration
 The Standard Configuration file is in $HOME/.config/planet-config.bash  
