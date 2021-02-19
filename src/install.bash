@@ -67,6 +67,10 @@ sleep 0.5
 info "I will now ask you if you want to update specific package types when you run alien.\nIf you don't know the package, just answer no, by pressing \"n\" on your keyboard\n\n"
 sleep 2.5
 
+
+# PIP PACKAGES
+# ------------
+
 read -p "Do you want to update all pip packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
   info "\nAlien will not update pip packages!\n"
@@ -76,6 +80,10 @@ else
   echo "export ALIEN_UPDATE_PIP_PACKAGES=true" > $HOME/.config/alien-config.bash
 fi
 sleep 1
+
+
+# GLOBAL NPM PACKAGES
+# -------------------
 
 read -p "Do you want to update all global npm packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
@@ -87,6 +95,10 @@ else
 fi
 sleep 1
 
+
+# ANTIBODY PACKAGES
+# -----------------
+
 read -p "Do you want to update all antibody packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
   info "\nAlien will not update antibody packages!\n"
@@ -95,11 +107,24 @@ else
   info "\nAlien will update antibody packages!\n"
   echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=true" >> $HOME/.config/alien-config.bash
 fi
-echo
 sleep 1
 
+
+# NPM ITSELF
+# ---------
+read -p "Do you want to update npm? [y/N] " -n 1 answer
+if [ $answer != "y" ];then
+  info "\nAlien will not update npm!\n"
+  echo "export ALIEN_UPDATE_NPM=false" >> $HOME/.config/alien-config.bash
+else
+  info "\nAlien will update npm!\n"
+  echo "export ALIEN_UPDATE_NPM=true" >> $HOME/.config/alien-config.bash
+fi
+sleep 1
+
+
 # Copying desktop file to .local/share/applications
-info "Step 4: Copying Desktop File.\n"
+info "\nStep 4: Copying Desktop File.\n"
 cp src/alien.desktop $HOME/.local/share/applications/
 echo Icon=$HOME/.alien-update/img/alien-icon.png >> $HOME/.local/share/applications/alien.desktop
 update-desktop-database  $HOME/.local/share/applications

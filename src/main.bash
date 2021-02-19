@@ -121,6 +121,24 @@ fi
 echo
 
 
+# Checking if npm is installed
+# If it is installed, then all packages will be updated
+# if the configuration says so
+if [ $ALIEN_UPDATE_NPM == true ];then
+  info "Trying to find the npm command...\n"
+  if cmd_exists npm;then
+    info "Found npm! Updating it...\n"
+    npm install -g npm
+    success "Done!\n"
+  else
+    error "Didn't find npm! Skipping...\n"
+  fi
+elif [ $ALIEN_UPDATE_NPM != true ];then
+  info "Seems like you do not want to update npm, Skipping...\n"
+fi
+echo
+
+
 # Checking if antibody is installed
 # If it is installed, then all packages will be updated
 # if the configuration says so
