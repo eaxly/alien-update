@@ -23,19 +23,18 @@ Paste the following in a terminal:
 
 # Configuration
 The Standard Configuration file is in $HOME/.config/alien-config.bash  
-Go there by typing `cd $HOME/.config` then `EDITOR alien-config.bash`  
-**Please replace EDITOR with your favorite text editor** (vi, nano, vim, neovim...)  
-
+Go there by typing `cd $HOME/.config` then `$EDITOR alien-config.bash`  
 
 **The File itself:**
 ```bash
-export ALIEN_UPDATE_PIP_PACKAGES = (value)
-export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES = (value)
-export ALIEN_UPDATE_ANTIBODY_PACKAGES = (value)
-
+export ALIEN_UPDATE_PIP_PACKAGES=(value)
+export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=(value)
+export ALIEN_UPDATE_ANTIBODY_PACKAGES=(value)
+export ALIEN_UPDATE_NPM=(value)
 ```
-Currently there are three configuration options. (value) can be "true" or "false"
+Currently there are four configuration options. (value) can be "true" or "false"
 The Name should be pretty descriptive but heres a list:
 - `ALIEN_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. If the value is false, it will not.
 - `ALIEN_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. If the value is false, it will not.
 - `ALIEN_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. If the value is false, it will not.
+- `ALIEN_UPDATE_NPM` = if the value is true, npm will be update. If the value is false, it wll not.
