@@ -3,14 +3,16 @@
 </div>
 
 # Alien Update
-is a command for ubuntu and ubuntu based-distros that does stuff.
-It:
+is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
+
+# Features:
 - updates ubuntu repositories
 - upgrades ubuntu packages
 - updates snap packages\*
 - updates flatpak packages\*
 - pip packages \*\*
 - global npm packages \*\*
+- npm itself \*\*
 - antibody packages \*\*
 
 \*: means that it will only be updated if the package is installed  
