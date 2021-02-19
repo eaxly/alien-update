@@ -3,5 +3,5 @@ Name=Alien Update
 Comment=Updates a large amount of applications
 Type=Application
 Terminal=true
-Exec=alien
+Exec=alien-update
 TryExec=/usr/bin/alien-update
