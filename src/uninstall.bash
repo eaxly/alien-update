@@ -20,34 +20,34 @@ success() {
   echo -en "${GREEN}${*}${NC}"
 }
 
-read -p "Are you sure you want to uninstall Planet? [y/N] " -n 1 answer
+read -p "Are you sure you want to uninstall Alien? [y/N] " -n 1 answer
 echo
 if [ $answer != "y" ];then
   info "Exiting...\n"
   exit 1
 fi
 
-info "Removing /usr/bin/planet...\n"
-sudo rm /usr/bin/planet
+info "Removing /usr/bin/alien-update...\n"
+sudo rm /usr/bin/alien-update
 echo
 sleep 1
 
-info "Removing $HOME/.planet-update...\n"
-sudo rm -r $HOME/.planet-update
+info "Removing $HOME/.alien-update...\n"
+sudo rm -r $HOME/.alien-update
 echo
 sleep 1
 
 read -p "Do you want to remove the Configuration file? [y/N] " -n 1 answer
 echo
 if [ $answer != "y" ];then
-  info "Configuration File will be kept in $HOME/.config/planet-config.bash"
+  info "Configuration File will be kept in $HOME/.config/alien-config.bash"
   sleep 1
 else
   info "Removing Configuration file...\n"
-rm $HOME/.config/planet-config.bash
+rm $HOME/.config/alien-config.bash
 fi
 sleep 1
 
 info "Removing Desktop file...\n"
-rm $HOME/.local/share/applications/planet.desktop
-success "\nSuccessfully uninstalled planet!\nWe will miss you!"
+rm $HOME/.local/share/applications/alien.desktop
+success "\nSuccessfully uninstalled alien!\nWe will miss you!"

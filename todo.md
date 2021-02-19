@@ -1,11 +1,11 @@
-# Todo 4 Planet - an ubuntu updater
+# Todo 4 Alien - an ubuntu updater
 # Main.bash
 - [ ] More Packages to be updated!!
 
 # Install.bash
 - [x] Make main.bash executable
-- [x] Move main.bash to /usr/bin/planet
-- [x] Create configuration file in $HOME/.config/planet-config.bash
+- [x] Move main.bash to /usr/bin/alien-update
+- [x] Create configuration file in $HOME/.config/alien-config.bash
 - [x] DONE!
 
 

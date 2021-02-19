@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Variables
-export PLANET_MAIN_FILE="src/main.bash"
+export ALIEN_MAIN_FILE="src/main.bash"
 # Defining Colors
 x='\033'
 RED="${x}[0;96m"
@@ -25,14 +25,11 @@ success() {
 
 # === START ===
 info "The Program has started!"
-info "Welcome to the Planet installer!\n\n\n"
-info "██████╗░██╗░░░░░░█████╗░███╗░░██╗███████╗████████╗░░░░░░██╗░░░██╗██████╗░██████╗░░█████╗░████████╗███████╗\n"
-info "██╔══██╗██║░░░░░██╔══██╗████╗░██║██╔════╝╚══██╔══╝░░░░░░██║░░░██║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝\n"
-info "██████╔╝██║░░░░░███████║██╔██╗██║█████╗░░░░░██║░░░█████╗██║░░░██║██████╔╝██║░░██║███████║░░░██║░░░█████╗░░\n"
-info "██╔═══╝░██║░░░░░██╔══██║██║╚████║██╔══╝░░░░░██║░░░╚════╝██║░░░██║██╔═══╝░██║░░██║██╔══██║░░░██║░░░██╔══╝░░\n"
-info "██║░░░░░███████╗██║░░██║██║░╚███║███████╗░░░██║░░░░░░░░░╚██████╔╝██║░░░░░██████╔╝██║░░██║░░░██║░░░███████╗\n"
-info "╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░╚══╝╚══════╝░░░╚═╝░░░░░░░░░░╚═════╝░╚═╝░░░░░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚══════╝\n"
+info "Welcome to the Alien installer!\n\n\n"
+info "▄▀█ █░░ █ █▀▀ █▄░█ ▄▄ █░█ █▀█ █▀▄ ▄▀█ ▀█▀ █▀▀\n"
+info "█▀█ █▄▄ █ ██▄ █░▀█ ░░ █▄█ █▀▀ █▄▀ █▀█ ░█░ ██▄\n"
 echo
+
 success "█ █▄░█ █▀ ▀█▀ ▄▀█ █░░ █░░ ▄▀█ ▀█▀ █ █▀█ █▄░█\n"
 success "█ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▄▄ █▀█ ░█░ █ █▄█ █░▀█\n"
 echo
@@ -42,9 +39,9 @@ info "=== STARTING ===\n\n"
 
 # Making main.bash executable
 info "Step 1: Making main.bash executable...\n"
-sudo chmod +x $PLANET_MAIN_FILE 
+sudo chmod +x $ALIEN_MAIN_FILE 
 sleep 0.5
-if [ -x $PLANET_MAIN_FILE ];then
+if [ -x $ALIEN_MAIN_FILE ];then
   success "Successfully made main.bash executable!\n"
 else
   error "Couldn't make main.bash executable! Exiting...\n"
@@ -52,62 +49,62 @@ else
 fi
 sleep 1
 
-# Copying main.bash to /usr/bin/planet to add it to the PATH variable
-info "Step 2: Copying main.bash to /usr/bin/planet.\n"
-sudo cp "$PLANET_MAIN_FILE" /usr/bin/planet
+# Copying main.bash to /usr/bin/alien-update to add it to the PATH variable
+info "Step 2: Copying main.bash to /usr/bin/alien-update.\n"
+sudo cp "$ALIEN_MAIN_FILE" /usr/bin/alien-update
 sleep 0.5
 
-if [ -f /usr/bin/planet ];then
+if [ -f /usr/bin/alien-update ];then
   success "Successfully moved File!\n"
 else
   error "An error occured, Exiting...\n"
 fi
 sleep 1
 
-# Creating Configuration File in $HOME/.config/planet-config.bash
+# Creating Configuration File in $HOME/.config/alien-config.bash
 info "Step 3: Create Config file.\n"
 sleep 0.5
-info "I will now ask you if you want to update specific package types when you run planet.\nIf you don't know the package, just answer no, by pressing \"n\" on your keyboard\n\n"
+info "I will now ask you if you want to update specific package types when you run alien.\nIf you don't know the package, just answer no, by pressing \"n\" on your keyboard\n\n"
 sleep 2.5
 
 read -p "Do you want to update all pip packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
-  info "\nPlanet will not update pip packages!\n"
-  echo "export PLANET_UPDATE_PIP_PACKAGES=false" >> $HOME/.config/planet-config.bash
+  info "\nAlien will not update pip packages!\n"
+  echo "export ALIEN_UPDATE_PIP_PACKAGES=false" >> $HOME/.config/alien-config.bash
 else
-  info "\nPlanet will update pip packages!\n"
-  echo "export PLANET_UPDATE_PIP_PACKAGES=true" >> $HOME/.config/planet-config.bash
+  info "\nAlien will update pip packages!\n"
+  echo "export ALIEN_UPDATE_PIP_PACKAGES=true" >> $HOME/.config/alien-config.bash
 fi
 sleep 1
 
 read -p "Do you want to update all global npm packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
-  info "\nPlanet will not update global npm packages!\n"
-  echo "export PLANET_UPDATE_GLOBAL_NPM_PACKAGES=false" >> $HOME/.config/planet-config.bash
+  info "\nAlien will not update global npm packages!\n"
+  echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=false" >> $HOME/.config/alien-config.bash
 else
-  info "\nPlanet will update global npm packages!\n"
-  echo "export PLANET_UPDATE_GLOBAL_NPM_PACKAGES=true" >> $HOME/.config/planet-config.bash
+  info "\nAlien will update global npm packages!\n"
+  echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=true" >> $HOME/.config/alien-config.bash
 fi
 sleep 1
 
 read -p "Do you want to update all antibody packages installed on your system? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
-  info "\nPlanet will not update antibody packages!\n"
-  echo "export PLANET_UPDATE_ANTIBODY_PACKAGES=false" >> $HOME/.config/planet-config.bash
+  info "\nAlien will not update antibody packages!\n"
+  echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=false" >> $HOME/.config/alien-config.bash
 else
-  info "\nPlanet will update antibody packages!\n"
-  echo "export PLANET_UPDATE_ANTIBODY_PACKAGES=true" >> $HOME/.config/planet-config.bash
+  info "\nAlien will update antibody packages!\n"
+  echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=true" >> $HOME/.config/alien-config.bash
 fi
 echo
 sleep 1
 
 # Copying desktop file to .local/share/applications
 info "Step 4: Copying Desktop File.\n"
-cp src/planet.desktop $HOME/.local/share/applications/
-echo Icon=$HOME/.planet-update/img/planet-icon.png >> $HOME/.local/share/applications/planet.desktop
+cp src/alien.desktop $HOME/.local/share/applications/
+echo Icon=$HOME/.alien-update/img/alien-icon.png >> $HOME/.local/share/applications/alien.desktop
 update-desktop-database  $HOME/.local/share/applications
 
-if [ -f $HOME/.local/share/applications/planet.desktop ];then
+if [ -f $HOME/.local/share/applications/alien.desktop ];then
   success "Successfully copied the desktop file!\n"
 else
   error "Something wen't wrong whilst copying the desktop file!\n"

@@ -1,8 +1,8 @@
 <div align="center">
-  <img height=256 width=256 src="./img/planet-icon.svg" alt="Planet Logo">
+  <img height=256 width=256 src="./img/alien-icon.svg" alt="Alien Logo">
 </div>
 
-# Planet Update
+# Alien Update
 is a command for ubuntu and ubuntu based-distros that does stuff.
 It:
 - updates ubuntu repositories
@@ -17,23 +17,23 @@ It:
 \*\*: means the above and if it is configurated so  
 # Installation:
 Paste the following in a terminal:  
-`bash -c "$(curl https://raw.githubusercontent.com/deepspacebird/planet-update/master/src/remote-install.bash)"`
+`bash -c "$(curl https://raw.githubusercontent.com/deepspacebird/alien-update/master/src/remote-install.bash)"`
 
 # Configuration
-The Standard Configuration file is in $HOME/.config/planet-config.bash  
-Go there by typing `cd $HOME/.config` then `EDITOR planet-config.bash`  
+The Standard Configuration file is in $HOME/.config/alien-config.bash  
+Go there by typing `cd $HOME/.config` then `EDITOR alien-config.bash`  
 **Please replace EDITOR with your favorite text editor** (vi, nano, vim, neovim...)  
 
 
 **The File itself:**
 ```bash
-export PLANET_UPDATE_PIP_PACKAGES = (value)
-export PLANET_UPDATE_GLOBAL_NPM_PACKAGES = (value)
-export PLANET_UPDATE_ANTIBODY_PACKAGES = (value)
+export ALIEN_UPDATE_PIP_PACKAGES = (value)
+export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES = (value)
+export ALIEN_UPDATE_ANTIBODY_PACKAGES = (value)
 
 ```
 Currently there are three configuration options. (value) can be "true" or "false"
 The Name should be pretty descriptive but heres a list:
-- `PLANET_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. If the value is false, it will not.
-- `PLANET_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. If the value is false, it will not.
-- `PLANET_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. If the value is false, it will not.
+- `ALIEN_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. If the value is false, it will not.
+- `ALIEN_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. If the value is false, it will not.
+- `ALIEN_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. If the value is false, it will not.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export BASE_REPO_URL="https://github.com/deepspacebird/planet-update"
-export PLANET_DIR_NAME="$HOME/.planet-update"
+export BASE_REPO_URL="https://github.com/deepspacebird/alien-update"
+export ALIEN_DIR_NAME="$HOME/.alien-update"
 # Defining Colors
 x='\033'
 RED="${x}[0;96m"
@@ -49,8 +49,8 @@ else
 fi
 
 info "Cloning git repo...\n"
-mkdir -p "$PLANET_DIR_NAME"
-git clone "$BASE_REPO_URL.git" "$PLANET_DIR_NAME"
+mkdir -p "$ALIEN_DIR_NAME"
+git clone "$BASE_REPO_URL.git" "$ALIEN_DIR_NAME"
 info "Installing..."
-cd "$PLANET_DIR_NAME"
+cd "$ALIEN_DIR_NAME"
 ./src/install.bash

@@ -28,11 +28,11 @@ success() {
 
 
 # Getting Config files
-if [ -f $HOME/.config/planet-config.bash ];then
+if [ -f $HOME/.config/alien-config.bash ];then
   info "Sourcing configuration...\n"
-  source $HOME/.config/planet-config.bash
+  source $HOME/.config/alien-config.bash
   success "Successfully sourced configuration.\n"
-elif [ ! -f $HOME/.config/planet-config.bash ];then
+elif [ ! -f $HOME/.config/alien-config.bash ];then
   error "The Configuration has been either deleted or not created.\nPlease use the Installation script \"install.bash\" to create the configuration.\n"
 fi
 
@@ -86,7 +86,7 @@ echo
 # Checking if pip or pip3 is installed
 # If one of them is installed, then all packages will be updated
 # if the configuration says so
-if [ $PLANET_UPDATE_PIP_PACKAGES == true ];then
+if [ $ALIEN_UPDATE_PIP_PACKAGES == true ];then
   info "Trying to find the pyhton pip package...\n"
   if cmd_exists python3-pip;then
     info "Found pip3 installed! Updating outdated packages...\n"
@@ -97,7 +97,7 @@ if [ $PLANET_UPDATE_PIP_PACKAGES == true ];then
   else
     error "Didn't find pip or pip3 installed.\n"
   fi
-elif [ $PLANET_UPDATE_PIP_PACKAGES != true ];then
+elif [ $ALIEN_UPDATE_PIP_PACKAGES != true ];then
   info "Seems like you do not want to update pip packages, Skipping...\n"
 fi
 echo
@@ -106,7 +106,7 @@ echo
 # Checking if npm is installed
 # If it is installed, then all packages will be updated
 # if the configuration says so
-if [ $PLANET_UPDATE_GLOBAL_NPM_PACKAGES == true ];then
+if [ $ALIEN_UPDATE_GLOBAL_NPM_PACKAGES == true ];then
   info "Trying to find the npm command...\n"
   if cmd_exists npm;then
     info "Found npm! Updating global packages...\n"
@@ -115,7 +115,7 @@ if [ $PLANET_UPDATE_GLOBAL_NPM_PACKAGES == true ];then
   else
     error "Didn't find npm installed! Skipping...\n"
   fi
-elif [ $PLANET_UPDATE_GLOBAL_NPM_PACKAGES != true ];then
+elif [ $ALIEN_UPDATE_GLOBAL_NPM_PACKAGES != true ];then
   info "Seems like you do not want to update global npm packages, Skipping...\n"
 fi
 echo
@@ -124,7 +124,7 @@ echo
 # Checking if antibody is installed
 # If it is installed, then all packages will be updated
 # if the configuration says so
-if [ $PLANET_UPDATE_ANTIBODY_PACKAGES == true ];then
+if [ $ALIEN_UPDATE_ANTIBODY_PACKAGES == true ];then
   info "Trying to find the antibody command...\n"
   if cmd_exists antibody;then
     info "Found antibody! Updating global packages...\n"
@@ -133,7 +133,7 @@ if [ $PLANET_UPDATE_ANTIBODY_PACKAGES == true ];then
   else
     error "Didn't find antibody! Skipping...\n"
   fi
-elif [ $PLANET_UPDATE_ANTIBODY_PACKAGES != true ];then
+elif [ $ALIEN_UPDATE_ANTIBODY_PACKAGES != true ];then
   info "Seems like you do not want to update antibody packages, Skipping...\n"
 fi
 echo
