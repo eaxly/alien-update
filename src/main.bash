@@ -171,8 +171,25 @@ if [ $ALIEN_UPDATE_SHELDON_PLUGINS == true ];then
 elif [ $ALIEN_UPDATE_SHELDON_PLUGINS != true ];then
   info "Seems like you do not want to update sheldon plugins, Skipping...\n"
 fi
-echo
 
+
+
+# Checking if atom is installed
+# If it is and the configuration "agrees", apm packages will be updated
+# else not.
+if [ $ALIEN_UPDATE_APM_PACKAGES == true ];then
+  info "Trying to find the apm command...\n"
+  if cmd_exists apm;then
+    info "Found apm! Updating global packages...\n"
+    apm update
+    success "Done!\n"
+  else
+    error "Didn't find apm! Skipping...\n"
+  fi
+elif [ $ALIEN_UPDATE_APM_PACKAGES != true ];then
+  info "Seems like you do not want to update apm packages, Skipping...\n"
+fi
+echo
 
 
 # Fixing Missing Packages

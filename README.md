@@ -15,9 +15,11 @@ is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
 - npm itself \*\*
 - antibody packages \*\*
 - sheldon plugins \*\*
+- atom packages \*\*
 
-\*: means that it will only be updated if the package is installed  
-\*\*: means the above and if it is configurated so  
+\*: planet will check if the program exists before running an update command for it.
+\*\*: planet will check if the program exists before running an update command for it and if the configuration for it is set to `true`.
+
 # Installation:
 Paste the following in a terminal:  
 `bash -c "$(curl https://raw.githubusercontent.com/ExtinctAxolotl/alien-update/main/src/remote-install.bash)"`
@@ -33,6 +35,7 @@ export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=(value)
 export ALIEN_UPDATE_ANTIBODY_PACKAGES=(value)
 export ALIEN_UPDATE_NPM=(value)
 export ALIEN_UPDATE_SHELDON_PLUGINS=(value)
+export ALIEN_UPDATE_APM_PACKGES=(value)
 ```
 Currently there are four configuration options. (value) can be "true" or "false"
 The Name should be pretty descriptive but heres a list:
@@ -41,3 +44,4 @@ The Name should be pretty descriptive but heres a list:
 - `ALIEN_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. Else not.
 - `ALIEN_UPDATE_NPM` = if the value is true, npm will be update. Else not.
 - `ALIEN_UPDATE_SHELDON_PLUGINS` = if the value is true, all [sheldon](https://github.com/rossmacarthur/sheldon) plugins will be updated. Else not.
+- `ALIEN_UPDATE_APM_PACKGES` = if the value is true, all [atom](https://atom.io) packages will be updated, else not.

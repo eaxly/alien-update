@@ -2,6 +2,7 @@
 
 # Variables
 export ALIEN_MAIN_FILE="src/main.bash"
+
 # Defining Colors
 x='\033'
 RED="${x}[0;96m"
@@ -137,7 +138,24 @@ else
 fi
 sleep 1
 
+
+# ATOM PACKAGES
+# -------------
+
+read -p "Do you want to update atom packages? [y/N] " -n 1 answer
+if [ $answer != "y" ];then
+  info "\nAlien will not update atom packages!\n"
+  echo "export ALIEN_UPDATE_APM_PACKAGES=false" >> $HOME/.config/alien-config.bash
+else
+  info "\nAlien will update sheldon plugins!\n"
+  echo "export ALIEN_UPDATE_APM_PACKAGES=true" >> $HOME/.config/alien-config.bash
+fi
+sleep 1
+echo
+
 # Copying desktop file to .local/share/applications
+# -------------------------------------------------
+
 info "\nStep 4: Copying Desktop File.\n"
 cp src/alien.desktop $HOME/.local/share/applications/
 echo Icon=$HOME/.alien-update/img/alien-icon.png >> $HOME/.local/share/applications/alien.desktop
