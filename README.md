@@ -31,10 +31,12 @@ export ALIEN_UPDATE_PIP_PACKAGES=(value)
 export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=(value)
 export ALIEN_UPDATE_ANTIBODY_PACKAGES=(value)
 export ALIEN_UPDATE_NPM=(value)
+export ALIEN_UPDATE_SHELDON_PLUGINS=(value)
 ```
 Currently there are four configuration options. (value) can be "true" or "false"
 The Name should be pretty descriptive but heres a list:
-- `ALIEN_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. If the value is false, it will not.
-- `ALIEN_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. If the value is false, it will not.
-- `ALIEN_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. If the value is false, it will not.
-- `ALIEN_UPDATE_NPM` = if the value is true, npm will be update. If the value is false, it wll not.
+- `ALIEN_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. Else not.
+- `ALIEN_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. Else not.
+- `ALIEN_UPDATE_GLOBAL_NPM_PACKAGES` = if the value is true, all npm packages will be updated. Else not.
+- `ALIEN_UPDATE_NPM` = if the value is true, npm will be update. Else not.
+- `ALIEN_UPDATE_SHELDON_PLUGINS` = if the value is true, all [sheldon](https://github.com/rossmacarthur/sheldon) plugins will be updated. Else not.
