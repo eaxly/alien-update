@@ -17,7 +17,7 @@ is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
 - sheldon plugins \*\*
 - atom packages \*\*
 
-\*: planet will check if the program exists before running an update command for it.
+\*: planet will check if the program exists before running an update command for it.  
 \*\*: planet will check if the program exists before running an update command for it and if the configuration for it is set to `true`.
 
 # Installation:
