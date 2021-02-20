@@ -112,6 +112,7 @@ sleep 1
 
 # NPM ITSELF
 # ---------
+
 read -p "Do you want to update npm? [y/N] " -n 1 answer
 if [ $answer != "y" ];then
   info "\nAlien will not update npm!\n"
@@ -122,6 +123,19 @@ else
 fi
 sleep 1
 
+
+# SHELDON PACKAGES/PLUGINS
+# ------------------------
+
+read -p "Do you want to update sheldon plugins? [y/N] " -n 1 answer
+if [ $answer != "y" ];then
+  info "\nAlien will not update sheldon plugins!\n"
+  echo "export ALIEN_UPDATE_SHELDON_PLUGINS=false" >> $HOME/.config/alien-config.bash
+else
+  info "\nAlien will update sheldon plugins!\n"
+  echo "export ALIEN_UPDATE_SHELDON_PLUGINS=true" >> $HOME/.config/alien-config.bash
+fi
+sleep 1
 
 # Copying desktop file to .local/share/applications
 info "\nStep 4: Copying Desktop File.\n"
