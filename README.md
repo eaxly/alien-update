@@ -14,6 +14,7 @@ is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
 - global npm packages \*\*
 - npm itself \*\*
 - antibody packages \*\*
+- sheldon plugins \*\*
 
 \*: means that it will only be updated if the package is installed  
 \*\*: means the above and if it is configurated so  
