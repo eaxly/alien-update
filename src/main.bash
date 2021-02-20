@@ -154,6 +154,23 @@ if [ $ALIEN_UPDATE_ANTIBODY_PACKAGES == true ];then
 elif [ $ALIEN_UPDATE_ANTIBODY_PACKAGES != true ];then
   info "Seems like you do not want to update antibody packages, Skipping...\n"
 fi
+
+
+# Checking if sheldon is installed
+# If it is and the configuration says so, sheldon plugins will be updated
+# else not.
+if [ $ALIEN_UPDATE_SHELDON_PLUGINS == true ];then
+  info "Trying to find the sheldon command...\n"
+  if cmd_exists sheldon;then
+    info "Found Sheldon! Updating global packages...\n"
+    sheldon lock --update
+    success "Done!\n"
+  else
+    error "Didn't find sheldon! Skipping...\n"
+  fi
+elif [ $ALIEN_UPDATE_SHELDON_PLUGINS != true ];then
+  info "Seems like you do not want to update sheldon plugins, Skipping...\n"
+fi
 echo
 
 
