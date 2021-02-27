@@ -57,9 +57,9 @@ echo
 # if snapd is installed snap packages will be updated
 # else nothing will be done
 info "Trying to find snapd...\n"
-if ! cmd_exists snapd;then
+if ! cmd_exists snap;then
   info "Seems like snapd is not installed. Skipping...\n"
-elif cmd_exists snapd;then
+elif cmd_exists snap;then
   info "Updating snap packages...\n"
   sudo snap refresh
 else
