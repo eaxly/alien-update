@@ -88,10 +88,10 @@ echo
 # if the configuration says so
 if [ $ALIEN_UPDATE_PIP_PACKAGES == true ];then
   info "Trying to find the pyhton pip package...\n"
-  if cmd_exists python3-pip;then
+  if cmd_exists pip3;then
     info "Found pip3 installed! Updating outdated packages...\n"
     pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip3 install -U
-  elif cmd_exists python-pip-whl;then
+  elif cmd_exists pip;then
     info "Found pip installed! Updating outdated packages..."
     pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
   else
