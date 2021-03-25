@@ -1,6 +1,7 @@
 <div align="center">
   <img height=256 width=256 src="./img/alien-icon.svg" alt="Alien Logo">
 </div>
+[![Sparkline](https://stars.medv.io/ExtinctAxolotl/alien-update.svg)](https://stars.medv.io/ExtinctAxolotl/alien-update)
 
 # Alien Update
 is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
