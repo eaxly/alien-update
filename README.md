@@ -22,7 +22,9 @@ is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
 
 # Installation:
 Paste the following in a terminal:  
-`bash -c "$(curl https://raw.githubusercontent.com/ExtinctAxolotl/alien-update/main/src/remote-install.bash)"`
+```bash
+bash -c "$(curl https://raw.githubusercontent.com/ExtinctAxolotl/alien-update/main/src/remote-install.bash)"
+```
 
 # Configuration
 The Standard Configuration file is in $HOME/.config/alien-config.bash  
