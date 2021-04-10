@@ -63,96 +63,99 @@ fi
 sleep 1
 
 # Creating Configuration File in $HOME/.config/alien-config.bash
-info "Step 3: Create Config file.\n"
-sleep 0.5
-info "I will now ask you if you want to update specific package types when you run alien.\nIf you don't know the package, just answer no, by pressing \"n\" on your keyboard\n\n"
-sleep 2.5
-
-
-# PIP PACKAGES
-# ------------
-
-read -p "Do you want to update all pip packages installed on your system? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update pip packages!\n"
-  echo "export ALIEN_UPDATE_PIP_PACKAGES=false" > $HOME/.config/alien-config.bash
+if [ -f $HOME/.config/alien-config.bash ];then
+  info "Seems like a configuration file already exists!\nSkipping...\n"
 else
-  info "\nAlien will update pip packages!\n"
-  echo "export ALIEN_UPDATE_PIP_PACKAGES=true" > $HOME/.config/alien-config.bash
+	info "Step 3: Create Config file.\n"
+	sleep 0.5
+	info "I will now ask you if you want to update specific package types when you run alien.\nIf you don't know the package, just answer no, by pressing \"n\" on your keyboard\n\n"
+	sleep 2.5
+
+
+	# PIP PACKAGES
+	# ------------
+
+	read -p "Do you want to update all pip packages installed on your system? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update pip packages!\n"
+		echo "export ALIEN_UPDATE_PIP_PACKAGES=false" > $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update pip packages!\n"
+		echo "export ALIEN_UPDATE_PIP_PACKAGES=true" > $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+
+
+	# GLOBAL NPM PACKAGES
+	# -------------------
+
+	read -p "Do you want to update all global npm packages installed on your system? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update global npm packages!\n"
+		echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=false" >> $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update global npm packages!\n"
+		echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=true" >> $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+
+
+	# ANTIBODY PACKAGES
+	# -----------------
+
+	read -p "Do you want to update all antibody packages installed on your system? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update antibody packages!\n"
+		echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=false" >> $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update antibody packages!\n"
+		echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=true" >> $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+
+
+	# NPM ITSELF
+	# ---------
+
+	read -p "Do you want to update npm? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update npm!\n"
+		echo "export ALIEN_UPDATE_NPM=false" >> $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update npm!\n"
+		echo "export ALIEN_UPDATE_NPM=true" >> $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+
+
+	# SHELDON PACKAGES/PLUGINS
+	# ------------------------
+
+	read -p "Do you want to update sheldon plugins? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update sheldon plugins!\n"
+		echo "export ALIEN_UPDATE_SHELDON_PLUGINS=false" >> $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update sheldon plugins!\n"
+		echo "export ALIEN_UPDATE_SHELDON_PLUGINS=true" >> $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+
+
+	# ATOM PACKAGES
+	# -------------
+
+	read -p "Do you want to update atom packages? [y/n] " -n 1 answer
+	if [ $answer != "y" ];then
+		info "\nAlien will not update atom packages!\n"
+		echo "export ALIEN_UPDATE_APM_PACKAGES=false" >> $HOME/.config/alien-config.bash
+	else
+		info "\nAlien will update sheldon plugins!\n"
+		echo "export ALIEN_UPDATE_APM_PACKAGES=true" >> $HOME/.config/alien-config.bash
+	fi
+	sleep 1
+	echo
 fi
-sleep 1
-
-
-# GLOBAL NPM PACKAGES
-# -------------------
-
-read -p "Do you want to update all global npm packages installed on your system? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update global npm packages!\n"
-  echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=false" >> $HOME/.config/alien-config.bash
-else
-  info "\nAlien will update global npm packages!\n"
-  echo "export ALIEN_UPDATE_GLOBAL_NPM_PACKAGES=true" >> $HOME/.config/alien-config.bash
-fi
-sleep 1
-
-
-# ANTIBODY PACKAGES
-# -----------------
-
-read -p "Do you want to update all antibody packages installed on your system? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update antibody packages!\n"
-  echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=false" >> $HOME/.config/alien-config.bash
-else
-  info "\nAlien will update antibody packages!\n"
-  echo "export ALIEN_UPDATE_ANTIBODY_PACKAGES=true" >> $HOME/.config/alien-config.bash
-fi
-sleep 1
-
-
-# NPM ITSELF
-# ---------
-
-read -p "Do you want to update npm? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update npm!\n"
-  echo "export ALIEN_UPDATE_NPM=false" >> $HOME/.config/alien-config.bash
-else
-  info "\nAlien will update npm!\n"
-  echo "export ALIEN_UPDATE_NPM=true" >> $HOME/.config/alien-config.bash
-fi
-sleep 1
-
-
-# SHELDON PACKAGES/PLUGINS
-# ------------------------
-
-read -p "Do you want to update sheldon plugins? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update sheldon plugins!\n"
-  echo "export ALIEN_UPDATE_SHELDON_PLUGINS=false" >> $HOME/.config/alien-config.bash
-else
-  info "\nAlien will update sheldon plugins!\n"
-  echo "export ALIEN_UPDATE_SHELDON_PLUGINS=true" >> $HOME/.config/alien-config.bash
-fi
-sleep 1
-
-
-# ATOM PACKAGES
-# -------------
-
-read -p "Do you want to update atom packages? [y/N] " -n 1 answer
-if [ $answer != "y" ];then
-  info "\nAlien will not update atom packages!\n"
-  echo "export ALIEN_UPDATE_APM_PACKAGES=false" >> $HOME/.config/alien-config.bash
-else
-  info "\nAlien will update sheldon plugins!\n"
-  echo "export ALIEN_UPDATE_APM_PACKAGES=true" >> $HOME/.config/alien-config.bash
-fi
-sleep 1
-echo
-
 # Copying desktop file to .local/share/applications
 # -------------------------------------------------
 
