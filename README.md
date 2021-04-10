@@ -39,7 +39,7 @@ export ALIEN_UPDATE_NPM=(value)
 export ALIEN_UPDATE_SHELDON_PLUGINS=(value)
 export ALIEN_UPDATE_APM_PACKGES=(value)
 ```
-Currently there are four configuration options. (value) can be "true" or "false"
+Currently there are ~~four~~ _six_ configuration options. (value) can be "true" or "false"
 The Name should be pretty descriptive but heres a list:
 - `ALIEN_UPDATE_PIP_PACKAGES` = if the value is true, all outdated pip packages will be updated. Else not.
 - `ALIEN_UPDATE_ANTIBODY_PACKAGES` = if the value is true, all [antibody](https://github.com/getantibody/antibody) packages will be updated. Else not.
