@@ -3,9 +3,11 @@
 </div>
 
 # Alien Update
-is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
+is a command for ubuntu and ubuntu based-distros that updates a lot of packages (and can install new ones.)
 
 # Features:
+
+##### Update
 - updates ubuntu repositories
 - upgrades ubuntu packages
 - updates snap packages\*
@@ -19,6 +21,26 @@ is a command for ubuntu and ubuntu based-distros that updates a lot of packages.
 
 \*: planet will check if the program exists before running an update command for it.  
 \*\*: planet will check if the program exists before running an update command for it and if the configuration for it is set to `true`.
+
+##### Install new things 🤯
+- if you add a package as an argument, it will install said package.
+  - **Example:**
+```bash
+$ # This will install libwacom2
+$ alien-update libwacom2
+```
+- if you add a PPA as a second argument, it will add said PPA (and run `apt update ` afterwards)
+  - **Example:**
+```bash
+$ # This will add the elementary-os/stable PPA and install elementary-meta
+$ alien-update elementary-meta ppa:elementary-os/stable
+```
+- if you wan't to only add a PPA and not install any other packages, then set `skp_` (for Skip) as the first argument.
+  - **Example:**
+```bash
+$ # This will ONLY Add the elementary-os/stable PPA
+$ alien-update skp_ ppa:elementary-os/stable
+```
 
 # Installation:
 Paste the following in a terminal:  
