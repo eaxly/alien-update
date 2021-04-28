@@ -38,10 +38,25 @@ fi
 
 
 ### === Main Program Code ===
+
+# Checking if any arguments were given
+if [ $2 ]; then
+  info "Adding PPA...\n"
+  sudo add-apt-repository $2
+fi
+
+
 # update respositories
 info "Updating...\n"
 sudo apt update
 echo
+
+# Installing the package specified in the first argument (if it exists)
+if [ $1 != "" ] && [ $1 != "skp_" ]
+then
+  info "Installing ${1}...\n"
+  sudo apt install $1
+fi
 
 # list upgradable
 info "Listing Upgradable Packages...\n"
@@ -206,3 +221,4 @@ echo
 info "Autoremoving uneeded Packages...\n"
 sudo apt autoremove -y
 echo
+
