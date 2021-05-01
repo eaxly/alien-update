@@ -50,7 +50,10 @@ fi
 
 info "Cloning git repo...\n"
 mkdir -p "$ALIEN_DIR_NAME"
-git clone "$BASE_REPO_URL.git" "$ALIEN_DIR_NAME"
+if [ -f $ALIEN_DIR_NAME ]; then
+  rm -r $ALIEN_DIR_NAME
+fi
+git clone --quiet "$BASE_REPO_URL.git" "$ALIEN_DIR_NAME"
 info "Installing..."
 cd "$ALIEN_DIR_NAME"
 ./src/install.bash
