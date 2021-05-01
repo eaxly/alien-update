@@ -42,8 +42,8 @@ $ # This will ONLY Add the elementary-os/stable PPA
 $ alien-update skp_ ppa:elementary-os/stable
 ```
 
-# Installation:
-Paste the following in a terminal:  
+# Installation and Updating:
+Paste the following in a terminal (if you wan't to update alien do the same thing):  
 ```bash
 bash -c "$(curl https://raw.githubusercontent.com/ExtinctAxolotl/alien-update/main/src/remote-install.bash)"
 ```
