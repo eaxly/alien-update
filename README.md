@@ -1,3 +1,8 @@
+# Deprecated
+This is not going to be updated.
+If I ever rewrite it, it will be done in a seperate repository.
+For the three people who have used this, Thank you! ♥️
+<!--
 <div align="center">
   <img height=256 width=256 src="./img/alien-icon.svg" alt="Alien Logo">
 </div>
@@ -69,3 +74,5 @@ The Name should be pretty descriptive but heres a list:
 - `ALIEN_UPDATE_NPM` = if the value is true, npm will be update. Else not.
 - `ALIEN_UPDATE_SHELDON_PLUGINS` = if the value is true, all [sheldon](https://github.com/rossmacarthur/sheldon) plugins will be updated. Else not.
 - `ALIEN_UPDATE_APM_PACKGES` = if the value is true, all [atom](https://atom.io) packages will be updated, else not.
+
+-->
