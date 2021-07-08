@@ -7,6 +7,9 @@ YELLOW="${x}[0;93m"
 GREEN="${x}[0;92m"
 NC="${x}[0m" # No Color
 
+echo -e $(tput bold)$RED"Alien Update will not be updated anymore!"$NC
+
+
 # Functions
 # Checks if a package is installed
 cmd_exists() {
